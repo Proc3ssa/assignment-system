@@ -1,0 +1,66 @@
+use philemon;
+
+create table users(
+   name varchar(90),
+   index_number varchar(15) primary key,
+   email varchar(50),
+    password varchar(50),
+    img_link varchar(30)
+);
+
+create table lecturer(
+ name varchar(50),
+ id varchar(10) primary key,
+ email varchar(40),
+ password varchar(20),
+img_link varchar(30)   
+);
+
+create table assignments(
+title varchar(40),
+    asscode varchar(10) PRIMARY key,
+    deadline varchar(10),
+    link varchar(90),
+    lecturer varchar(30),
+    Foreign key lecturer references lecturer(id) on delete cascade;
+);
+
+CREATE table submissions(
+ index_number varchar(11),
+    submission_date varchar(10),
+    course varchar(40),
+    asscode varchar(10),
+    link varchar(90) primary key,
+    FOREIGN key (index_number) REFERENCES users(index_number) on delete CASCADE,
+    FOREIGN key (asscode) REFERENCES assignments(asscode) on delete CASCADE
+    
+);
+
+create table assessment(
+create database philemon;
+use philemon;
+
+index_number varchar(10),
+    mark varchar(3),
+    asscode varchar(6),
+    course varchar(40),
+    FOREIGN key (asscode) REFERENCES assignments(asscode) on delete CASCADE,
+    FOREIGN key (index_number) REFERENCES users(index_number) on delete CASCADE
+);
+
+create table notes(
+course_id varchar(40),
+    uploaded_date varchar(10),
+    link varchar(90) primary key,
+    lecturer varchar(10),
+    FOREIGN key (lecturer) REFERENCES lecturer(id) on delete CASCADE
+);
+
+create table information(
+    message_id int primary key AUTO_INCREMENT,
+    lecturer_ID varchar(10),
+    uploaded_date varchar(10),
+    message varchar(1000),
+    title varchar(40),
+    FOREIGN key (lecturer_ID) REFERENCES lecturer(id) on delete CASCADE
+);
