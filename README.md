@@ -23,4 +23,4 @@ After that open phpmyadmin and create a database named `philemon`
 ```
 open `database.sql` copy its content and past it in phpmyadmin query section
 ```
-start your `apache` server and visit the link http://localhost/philemon
+start your `apache` and `mysql` servers and visit the link http://localhost/philemon
