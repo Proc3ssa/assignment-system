@@ -2,7 +2,7 @@
 
 # Requirements
 ```
-1)  Php server (Apache prefarable)
+1)  Php server (XAMPP Apache prefarable)
 ```
 2) Text editor
 ```
